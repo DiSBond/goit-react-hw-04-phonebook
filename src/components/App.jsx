@@ -15,8 +15,10 @@ export const App = () => {
     const contacts = localStorage.getItem('contacts');
     const parsedContacs = JSON.parse(contacts);
 
-    if (parsedContacs.length > 0) {
-      setContacts(parsedContacs);
+    if (parsedContacs) {
+      if (parsedContacs.length > 0) {
+        setContacts(parsedContacs);
+      }
     }
   }, []);
 
